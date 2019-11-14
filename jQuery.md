@@ -76,3 +76,11 @@ Some example modules that can be excluded are:
     * ajax/script:The <script> AJAX transport only;used to retrieve scripts.
 
     * ajax/jsonp: The JSONP AJAX transport only; used to retrieve scripts.
+
+    * css: THE
+
+    * css/showHide: Non-animated
+
+    * deprecated: Methods
+
+    * css
