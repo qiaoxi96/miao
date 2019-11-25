@@ -8,15 +8,31 @@
     /* YOUR STYLE GOES HERE */
     /* 不得改变页面的任何html结构 */
 
-    p.a :hover {
+    body>p:first-child {
       color: red;
     }
 
-    p.a :active {
+    .a[tabindex="-1"]:hover {
+      color: red;
+    }
+
+    .a[tabindex="-1"]:focus {
+      color: blue;
+    }
+
+    .a[tabindex="-1"]:active {
       color: green;
     }
 
-    p.a :focus {
+    .a.c span:first-child {
+      color: red;
+    }
+
+    .a.c span>span:first-child {
+      color: green;
+    }
+
+    .a.c span>span:nth-child(2) {
       color: blue;
     }
 
@@ -28,8 +44,7 @@
       color: orange;
     }
 
-    a[href *="MAILTO"],
-    a[href *="mailto"] {
+    a[href *="mailto"i] {
       color: blue;
     }
 
@@ -37,24 +52,23 @@
       color: yellow;
     }
 
-    [href $="pdf"],
-    [href $="PDF"] {
+    i a[href $=".pdf"i] {
       font-size: 30px;
     }
 
-    .a ul li:nth-child(n+4):nth-child(-n+7) {
+    .a>ul>li:nth-child(n+4):nth-child(-n+7) {
       color: red;
     }
 
-    .b ul li:nth-child(-n+25) {
+    .b>ul>li:nth-child(-n+25) {
       color: red;
     }
 
-    .b ul li:nth-child(n+65) {
+    .b>ul>li:nth-child(n+65) {
       color: green;
     }
 
-    .b ul li:nth-child(-n+50):nth-child(n+35) {
+    .b>ul>li:nth-child(-n+50):nth-child(n+35) {
       color: blue;
     }
 
