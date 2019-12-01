@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    oald-layout-position
+  </title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .all {
+      height: 100%;
+      width: 100%;
+    }
+
+    .a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20%;
+      height: 100%;
+      background-color: green;
+    }
+
+    .b header {
+      position: absolute;
+      top: 0;
+      left: 20%;
+      height: 10%;
+      width: 40%;
+      background-color: rgb(204, 184, 184);
+    }
+
+    .b main {
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      bottom: 0px;
+      right: 40%;
+      height: 90%;
+      width: 40%;
+      background-color: rgb(26, 161, 214);
+    }
+
+    .c {
+      position: absolute;
+      top: 0;
+      left: 60%;
+      width: 20%;
+      height: 100%;
+      background-color: rgb(164, 165, 124);
+    }
+
+    .d {
+      position: absolute;
+      top: 0;
+      left: 80%;
+      right: 0;
+      bottom: 0;
+      width: 20%;
+      height: 100%;
+      background-color: rgb(141, 65, 125);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="all">
+    <aside class="a"></aside>
+    <div class="b">
+      <header>
+        标题
+      </header>
+      <main>
+        主内容
+      </main>
+    </div>
+    <aside class="c"></aside>
+    <aside class="d"></aside>
+  </div>
+</body>
+
+</html>

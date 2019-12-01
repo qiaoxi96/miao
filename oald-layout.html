@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>oald-layout</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    .all {
+      height: 100%;
+      width: 100%;
+      font-size: 0px;
+
+    }
+
+    .all>* {
+      box-sizing: border-box;
+      vertical-align: top;
+    }
+
+    .a {
+      display: inline-block;
+      background-color: gray;
+      width: 20%;
+      height: 100%;
+    }
+
+    .d {
+      display: inline-block;
+      width: 40%;
+      height: 100%;
+    }
+
+    .d header {
+      display: inline-block;
+      width: 100%;
+      height: 100px;
+      background-color: pink;
+      font-size: 20px;
+    }
+
+    .d main {
+      display: inline-block;
+      width: 100%;
+      height: calc(100% - 100px);
+      background-color: #577;
+      font-size: 20px;
+    }
+
+    .b {
+      display: inline-block;
+      background-color: blue;
+      width: 20%;
+      height: 100%;
+    }
+
+    .c {
+      display: inline-block;
+      background-color: greenyellow;
+      width: 20%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="all">
+
+    <aside class="a">
+    </aside>
+
+    <div class="d">
+      <header>
+        标题
+      </header>
+      <main>
+        主内容
+      </main>
+    </div>
+    <aside class="b">
+    </aside>
+
+    <aside class="c">
+    </aside>
+
+  </div>
+
+</body>
+
+</html>
