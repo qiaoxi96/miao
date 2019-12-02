@@ -1,0 +1,24 @@
+.icon{
+  display:inline-block;
+  background-image: url(https://www.google.com/images/nav_logo242_hr.webp);
+  background-color:black;
+}
+.icon-search{
+  width:50px;
+  height:50px;
+  border:1px solid;
+  background-position: -215px -110px;
+}
+.icon-play{
+  border:1px solid;
+  width:56px;
+  height:56px;
+  background-position: -276px -82px;
+}
+.icon-google-logo{
+  border: 1px solid;
+  width: 40px;
+  height: 65px;
+  background-position: 0 -420px;
+
+}
