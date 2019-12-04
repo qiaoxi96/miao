@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>艺龙导航栏</title>
+  <style>
+    .navbar {
+      background-color: #2064C8;
+      color: white;
+    }
+
+    nav {
+      width: 600px;
+      margin: auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0px;
+      font-size: 0;
+    }
+
+    li {
+      position: relative;
+      display: inline-block;
+      font-size: 13px;
+      padding: 10px;
+      border-right: 1px solid #3774CE;
+    }
+
+    li:first-child {
+      border-left: 1px solid #3774CE;
+    }
+
+    li:hover {
+      background-color: #0053AC;
+    }
+
+    li[data-tip]::before {
+      content: attr(data-tip);
+      position: absolute;
+      font-size: 8px;
+      z-index: 10;
+      background-color: #FF8E00;
+      color: white;
+      bottom: 30px;
+      left: 60px;
+      white-space: pre;
+    }
+
+    li[data-tip]:hover::before {
+      background-color: red;
+      text-emphasis: ;
+
+    }
+
+    li[data-tip]::after {
+      content: "";
+      z-index: 10;
+      position: absolute;
+      border: 2px solid;
+      border-color: #FF8E00 transparent transparent #FF8E00;
+      bottom: 26px;
+      left: 62px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <nav>
+      <ul>
+        <li title="旅游网">首页</li>
+        <li title="酒店预订">国内酒店</li>
+        <li data-tip="低价促" title="海外酒店">海外酒店</li>
+        <li data-tip="新升级" title="机票预定">国内·国际机票</li>
+        <li title="火车票">火车票</li>
+        <li title="汽车票">汽车票</li>
+        <li title="商旅">商旅</li>
+      </ul>
+    </nav>
+  </div>
+</body>
+
+</html>

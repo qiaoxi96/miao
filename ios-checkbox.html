@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ios-checkbox</title>
+  <style>
+    input {
+      display: none;
+    }
+
+    /* ios按钮*/
+    .ios+.ios-label {
+      display: inline-block;
+      position: relative;
+      height: 155px;
+      width: 270px;
+      border: 4px solid #cbcbcb;
+      border-radius: 120px;
+      box-sizing: border-box;
+      padding: 6px;
+      transition: .5s;
+    }
+
+    .ios+.ios-label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 135px;
+      height: 135px;
+      border-radius: 120px;
+      box-shadow: 0 0 10px gray;
+      left: 6px;
+      background-color: white;
+      transition: .5s;
+    }
+
+    .ios:checked+.ios-label {
+      box-shadow: 0 0 0 74px #30F349 inset;
+      xbackground-color: #30F349;
+      border-color: #30F349;
+    }
+
+    .ios:checked+.ios-label::before {
+      left: 124px;
+    }
+
+    /********************************/
+    .dian+.dian-label {
+      display: inline-block;
+      position: relative;
+      width: 34px;
+      height: 34px;
+      border: 4px solid;
+      border-radius: 34px;
+      transition: .1s;
+      top: 10px;
+    }
+
+    .dian:checked+.dian-label {
+      font-size: 0px;
+      border: 4px solid #04BE5D;
+    }
+
+    .dian+.dian-label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      background-color: #04BE5D;
+      border-radius: 0px;
+      transition: .1s;
+      top: 17px;
+      left: 17px;
+    }
+
+    .dian:checked+.dian-label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background-color: #04BE5D;
+      border-radius: 20px;
+      top: 6px;
+      left: 6px;
+      transition: .1s;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="up" class="ios">
+  <label class="ios-label" for="up"></label>
+  <br>
+  <input type="checkbox" name="" id="click" class="dian">
+  <label class="dian-label" for="click"></label>
+</body>
+
+</html>
