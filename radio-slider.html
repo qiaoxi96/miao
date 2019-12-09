@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>radio-slider</title>
+  <style>
+    img {
+      xdisplay: none;
+      xposition: absolute;
+      xtop: 0;
+      xleft: 0%;
+      xtransition: 1s;
+      /*透明度设置*/
+      xopacity: 0;
+    }
+
+    input[name*="slider"] {
+      position: relative;
+      top: calc(100% - 20px);
+      z-index: 10;
+      left: 160px;
+    }
+
+    input:checked+*+*+*+img {
+      display: block;
+      left: 0;
+      /*透明度设置*/
+      xopacity: 1;
+    }
+
+    div {
+      border: 2px solid #b4afaf;
+      position: relative;
+      width: 544px;
+      height: 306px;
+      overflow: hidden;
+      margin: auto;
+
+    }
+
+    section {
+      position: absolute;
+      width: 2200px;
+      font-size: 0px;
+      top: 0;
+      left: 0;
+      transition: .5s;
+    }
+
+    #a:checked~section {
+      left: 0%;
+    }
+
+    #b:checked~section {
+      left: -100%;
+    }
+
+    #c:checked~section {
+      left: -200%;
+    }
+
+    #d:checked~section {
+      left: -300%;
+    }
+
+    label {
+      font-size: 30px;
+      color: white;
+      text-align: center;
+
+    }
+
+    #left+label[for*="left"] {
+      display: inline-block;
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      left: 0px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    #right+label[for*="right"] {
+      display: inline-block;
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      right: 0px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    #left:checked~section+label[for*="left"] {
+      left: -100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="checkbox" name="" id="left">
+    <label for="left"> &lt; </label>
+    <input type="checkbox" name="" id="right">
+    <label for="right"> &gt; </label>
+
+
+    <input type="radio" name="slider" checked id="a">
+    <input type="radio" name="slider" id="b">
+    <input type="radio" name="slider" id="c">
+    <input type="radio" name="slider" id="d">
+    <section>
+      <img
+        src="https://files.porsche.cn/filestore/image/multimedia/none/982-718-c7-modelimage-sideshot/thumbwhite/035e1d5e-fa4f-11e9-80c6-005056bbdc38;sD;twebp/porsche-thumbwhite.webp"
+        alt="">
+
+      <img
+        src="https://files.porsche.cn/filestore/image/multimedia/none/982-718-c7s-modelimage-sideshot/thumbwhite/6d59604b-fa51-11e9-80c6-005056bbdc38;sD;twebp/porsche-thumbwhite.webp"
+        alt="">
+
+      <img
+        src="https://files.porsche.cn/filestore/image/multimedia/none/982-718-bo-modelimage-sideshot/thumbwhite/22f2d22d-fa4e-11e9-80c6-005056bbdc38;sD;twebp/porsche-thumbwhite.webp"
+        alt="">
+
+      <img
+        src="https://files.porsche.cn/filestore/image/multimedia/none/982-718-bos-modelimage-sideshot/thumbwhite/e5611e90-fa4f-11e9-80c6-005056bbdc38;sD;twebp/porsche-thumbwhite.webp"
+        alt="">
+    </section>
+
+  </div>
+</body>
+
+</html>

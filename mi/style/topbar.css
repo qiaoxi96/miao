@@ -1,0 +1,42 @@
+.topbar{
+  position: relative;
+  background-color:#333333;
+  color:#B0B0B0;
+  font-size:12px;
+  line-height:40px;
+  z-index: 99;
+}
+.topbar-all{
+  width:1226px;
+  margin:0 auto;
+}
+.topbar .topbar-first{
+  float:left;
+}
+.topbar .topbar-first li{
+  float:left;
+}
+.topbar .topbar-first .download-app{
+  position: relative;
+}
+.topbar .topbar-first .download-app:hover span{
+  display:block;
+}
+.topbar .topbar-first .download-app span{
+
+}
+.topbar a{
+  color:#B0B0B0;
+}
+.topbar li a:hover{
+
+  color:#FFF;
+}
+.topbar-first ul li{
+
+  display:inline-block;
+  xborder-left:1px solid #424242;
+}
+.topbar-first ul li:first-child{
+  xborder-left:none;
+}

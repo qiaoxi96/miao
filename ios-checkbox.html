@@ -69,22 +69,18 @@
       width: 0px;
       height: 0px;
       background-color: #04BE5D;
-      border-radius: 0px;
+      border-radius: 999px;
       transition: .1s;
-      top: 17px;
-      left: 17px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
     }
 
     .dian:checked+.dian-label::before {
-      content: "";
-      display: inline-block;
-      position: absolute;
       width: 22px;
       height: 22px;
-      background-color: #04BE5D;
-      border-radius: 20px;
-      top: 6px;
-      left: 6px;
       transition: .1s;
     }
   </style>
@@ -94,8 +90,15 @@
   <input type="checkbox" name="" id="up" class="ios">
   <label class="ios-label" for="up"></label>
   <br>
-  <input type="checkbox" name="" id="click" class="dian">
-  <label class="dian-label" for="click"></label>
+
+  <input class="dian" type="radio" name="type" id="a1">
+  <label class="dian-label" for="a1"></label>
+
+  <input class="dian" type="radio" name="type" id="a2">
+  <label class="dian-label" for="a2"></label>
+
+  <input class="dian" type="radio" name="type" id="a3">
+  <label class="dian-label" for="a3"></label>
 </body>
 
 </html>
