@@ -1,42 +1,120 @@
 .topbar{
   position: relative;
-  background-color:#333333;
-  color:#B0B0B0;
+  background-color:#333;
   font-size:12px;
   line-height:40px;
   z-index: 99;
 }
-.topbar-all{
-  width:1226px;
-  margin:0 auto;
-}
-.topbar .topbar-first{
+
+/*导航栏前部*/
+.topbar .topbar-left{
   float:left;
 }
-.topbar .topbar-first li{
+.topbar .topbar-left li{
   float:left;
 }
-.topbar .topbar-first .download-app{
+.topbar .topbar-left .download-app{
   position: relative;
 }
-.topbar .topbar-first .download-app:hover span{
+.topbar .topbar-left .download-app:hover span{
   display:block;
 }
-.topbar .topbar-first .download-app span{
-
+.topbar .topbar-left .download-app span{
+  display:none;
+  position: absolute;
+  width: 124px;
+  height: 150px;
+  text-align:center;
+  color:#333;
+  background-color: #fff;
+  top:100%;
+  left:50%;
+  z-index:99;
+  margin-left:-55px;
+  font-size:14px;
+  box-shadow:0 1px 5px #aaa;
+}
+.topbar .topbar-left .download-app span::before{
+  content:"";
+  display:block;
+  position: absolute;
+  border-top:8px solid rgba(0,0,0,0);
+  border-left:8px solid rgba(0,0,0,0);
+  border-right:8px solid rgba(0,0,0,0);
+  border-bottom:8px solid #F8F8F8;
+  top:-16px;
+  left:calc(50% - 16px);
+}
+.topbar .topbar-left .download-app span img{
+  display:block;
+  margin:20px auto 0;
 }
 .topbar a{
   color:#B0B0B0;
 }
 .topbar li a:hover{
-
   color:#FFF;
 }
-.topbar-first ul li{
+.topbar li:not(:last-child)::after{
+  content:"|";
+  color:#424242;
+  margin:6px;
+}
+/*导航栏右部*/
+.topbar .topbar-right{
+  float:left;
+  margin-left:245px;
+}
+.topbar .topbar-right li{
+  float:left;
+}
 
-  display:inline-block;
-  xborder-left:1px solid #424242;
+/*购物车*/
+.topbar .shopping .iconfont{
+  color:#b0b0b0;
+  font-size:20px;
+  vertical-align: top;
 }
-.topbar-first ul li:first-child{
-  xborder-left:none;
+.topbar .shopping{
+  float:right;
+  width:120px;
+  position: relative;
+  text-align: center;
+  background-color: #424242;
+  cursor: pointer;
 }
+.topbar .shopping span::after{
+  content:"(0)";
+  color:#B0B0B0;
+}
+.topbar .shopping:hover{
+  color:#FF6700;
+  background-color: #fff;
+}
+.topbar .shopping:hover a{
+  color:#FF6700;
+}
+.topbar .shopping:hover span::after{
+  color:#FF6700;
+}
+.topbar .shopping::after{
+  content:"购物车中还没有商品，赶紧选购吧！";
+  color:#424242;
+  position:absolute;
+  width:316px;
+  height: 0;
+  line-height:100px;
+  top:100%;
+  right: 0;
+  overflow:hidden;
+  transition:.3s;
+  box-shadow:0 4px 4px rgba(0,0,0,0.1);
+  cursor:default;
+  z-index: 99;
+  background: #fff;
+}
+.topbar .shopping:hover::after{
+  height:100px;
+}
+
+

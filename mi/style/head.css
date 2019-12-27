@@ -1,0 +1,28 @@
+.header{
+  line-height:100px;
+  position: relative ;
+  font-size:0px;
+}
+.header .logo{
+  position: absolute;
+  top:24px;
+  background-image: url(/picture/mi-logo.png);
+  width:55px;
+  height: 55px;
+  background-color: #ff6700;
+  overflow:hidden;
+}
+.header-nav .nav-list{
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  vertical-align: middle;
+  margin-left:235px;
+}
+.header-nav .nav-list > li{
+  float: left;
+}
+.header-nav .nav-list > li a{
+  display: inline-block;
+  padding:0 10px;
+}

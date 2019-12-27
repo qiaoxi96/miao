@@ -1,18 +1,63 @@
-html,body{
-  margin:0;
-  padding:0;
+*{
+  background-color: rgba(0,0,0,0.1);
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/?#iefix') format('embedded-opentype'),
+      url('../font/iconfont.woff2') format('woff2'),
+      url('../font/iconfont.woff') format('woff'),
+      url('../font/iconfont.ttf') format('truetype'),
+      url('../font/iconfont.svg#iconfont') format('svg');
 }
 body{
-    width:1226px;
+    min-width:1226px;
     margin:0;
-    overflow-x: hidden;/*为什么是-x*/
+    overflow-y:scroll;/*为什么是-x*/
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+body,html{
+   scroll-behavior:smooth;
+}
+*,*::before,*::afterEW21{
+  box-sizing: border-box;
 }
 ul,li{
   padding:0;
   margin:0;
   list-style:none;
 }
+div{
+  display: block;
+}
 dl,dt,dd{
   padding: 0;
   margin: 0;
+}
+.container{
+  width:1226px;
+  margin:0 auto;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clearfix::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+a {
+  text-decoration: none;
+  color: #757575;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+}
+*,*::before,*::after{
+  box-sizing: border-box;
 }

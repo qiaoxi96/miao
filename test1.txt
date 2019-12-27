@@ -1,4 +1,4 @@
-大喵教育前端培训
+﻿大喵教育前端培训
 ================
 
 ## 阶段性测试 2019.12.06
@@ -302,7 +302,7 @@
     后代：
         ul li a img
     祖先：
-        section
+        section main
     子：
         ul
     父：
@@ -349,6 +349,7 @@
       ` el.style.color="red" `
 
 43. 如何让页面打印时应用不同的效果？
+     用link标签为页面设置打印时生效的样式表，并设置不同的样式
     <link rel="stylesheet" href="xxx.css" media="print">
 
 44. 假设 index.html 的路径为 http://user.coding.me/task/index.html ，如下引用的a.css和b.css路径分别为？
@@ -578,29 +579,29 @@
 
     标签：
     html, hyper text markup language
-    div,
-    p,
-    a,
-    em,
-    tr,
-    th,
-    td,
+    div, division
+    p, paragraph
+    a, anchor
+    em, emphasis
+    tr, table row
+    th, table head
+    td, table data
     col, column
-    ul,
-    ol,
-    li,
-    dl, description
-    dt, description
+    ul, unordered list
+    ol, ordered list
+    li, list item
+    dl, description list
+    dt, description title
     dd, description detail
     pre, preformated
     nav navigator
 
     属性：
-    coord,
-    rect,
-    poly,
-    href,
-    src
+    coord, coordinate
+    rect, rectangle
+    poly, polygon
+    href, hyper reference
+    src source
 
 62. 请说出你对命令行程序的理解，以及其与 GUI 程序的区别
     1.一个命令对应一个程序，只不过没有界面，只有文字输出，通过参数调整其行为

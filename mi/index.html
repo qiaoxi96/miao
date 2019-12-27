@@ -3,65 +3,126 @@
 
 <head>
   <meta charset="utf-8">
-  <title>小米商城 - 小米9 Pro、小米MIX Alpha、Redmi Note 8，小米电视官方网站</title>
+  <title>小米商城 - 小米9 Pro、Redmi K30、小米MIX Alpha，小米电视官方网站</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <link rel="icon" href="https://s01.mifile.cn/favicon.ico">
   <link rel="stylesheet" href="./style/base.css">
   <link rel="stylesheet" href="./style/topbar.css" />
+  <link rel="stylesheet" href="./style/head.css">
 </head>
 
 <body>
   <div class="mi">
 
     <!--导航栏-->
-    <div class="topbar">
-      <div class="topbar-all">
-        <div class="topbar-first">
+    <div class="topbar clearfix">
+      <div class="container">
+        <div class="topbar-left">
           <ul>
-            <li>
-              <a href="#">小米商城</a>
-            </li>
-            <li>
-              <a href="https://www.miui.com/" target="_blank">MIUI</a>
-            </li>
-            <li>
-              <a href="https://www.mi.com/index.html" target="_blank">loT</a>
-            </li>
-            <li>
-              <a href="https://i.mi.com/" target="_blank">云服务</a>
-            </li>
-            <li>
-              <a href="https://jr.mi.com/?from=micom" target="_blank">金融</a>
-            </li>
-            <li>
-              <a href="https://www.xiaomiyoupin.com/" target="_blank">有品</a>
-            </li>
-            <li>
-              <a href="https://xiaoai.mi.com/" target="_blank">小爱开放平台</a>
-            </li>
-            <li>
-              <a href="https://qiye.mi.com/" target="_blank">企业团购</a>
-            </li>
-            <li>
-              <a href="https://www.mi.com/aptitude/list?id=41" target="_blank">资质证照</a>
-            </li>
-            <li>
-              <a href="https://www.mi.com/aptitude/list" target="_blank">协议规则</a>
-            </li>
+            <li><a href="#">小米商城</a></li>
+            <li><a href="#" target="_blank">MIUI</a></li>
+            <li><a href="#" target="_blank">loT</a></li>
+            <li><a href="#" target="_blank">云服务</a></li>
+            <li><a href="#" target="_blank">金融</a></li>
+            <li><a href="#" target="_blank">有品</a></li>
+            <li><a href="#" target="_blank">小爱开放平台</a></li>
+            <li><a href="#" target="_blank">企业团购</a></li>
+            <li><a href="#" target="_blank">资质证照</a></li>
+            <li><a href="#" target="_blank">协议规则</a></li>
             <li class="download-app">
-              <a href="https://www.mi.com/appdownload" target="_blank">下载app
+              <a href="#" target="_blank">下载app
                 <span>
                   <img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="小米商城" width="90px"
                     height="90px">小米商城APP
                 </span>
               </a>
             </li>
-            <li>Select Location</li>
+            <li><a href="#">Select Location</a></li>
           </ul>
+        </div>
 
+        <div class="topbar-right">
+          <ul>
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">消息通知</a></li>
+          </ul>
+        </div>
+
+        <div class="shopping">
+          <i class="iconfont">
+            &#xe67e;
+          </i>
+          <span>
+            <a href="#">购物车</a>
+          </span>
         </div>
       </div>
     </div>
+    <!--网页头部-->
+    <div class="header clearfix">
+      <div class="container">
+        <!--logo-->
+        <a href="#" class="logo" title="小米官网"></a>
+        <!--列表栏-->
+        <div class="header-nav">
+          <ul class="nav-list">
+            <li>
+              <a href="#">小米手机</a>
+            </li>
+            <li>
+              <a href="#">Redmi 红米</a>
+            </li>
+            <li>
+              <a href="#">电视</a>
+            </li>
+            <li>
+              <a href="#">笔记本</a>
+            </li>
+            <li>
+              <a href="#">家电</a>
+            </li>
+            <li>
+              <a href="#">路由器</a>
+            </li>
+            <li>
+              <a href="#">智能硬件</a>
+            </li>
+            <li>
+              <a href="#">服务</a>
+            </li>
+            <li>
+              <a href="#">社区</a>
+            </li>
+          </ul>
+        </div>
+        <!--搜索栏-->
+        <div class="header-search">
+          <form action="#">
+            <input type="text" name="search-content" class="search-content" />
+            <label for="submit" class="submit">
+              <i class="iconfont">&#xe612;</i>
+            </label>
+            <input type="submit" id="submit" hidden />
+            <a href="#" class="search-push">小米9 PRO 5G</a>
+            <a href="#" class="search-push">Redmi Note 8</a>
+            <ul class="search-list">
+              <li><a href="#"> 小米 9</a></li>
+              <li><a href="#"> Redmi K20 pro</a></li>
+              <li><a href="#"> Redmi K20</a></li>
+              <li><a href="#"> Redmi Note 7 Pro</a></li>
+              <li><a href="#"> Redmi Note 7</a></li>
+              <li><a href="#"> 小米电视4c</a></li>
+              <li><a href="#"> 电视32英寸</a></li>
+              <li><a href="#"> 笔记本pro</a></li>
+              <li><a href="#"> 小爱音箱</a></li>
+              <li><a href="#"> 净水器</a></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </body>
