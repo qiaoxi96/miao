@@ -1,41 +1,41 @@
 <script type="x" id="ch0103/01">
   var a = Number(prompt('A = ', ''));
   var b = Number(prompt('B = ', ''));
-  console.log('A + B = ', a + b);
+  console.log(a + b);
 </script>
 
 <script type="x" id="ch0103/02">
   var a = Number(prompt('a = ', ''));
   var b = Number(prompt('b = ', ''));
   var c = Number(prompt('c = ', ''));
-  console.log('(a + b) * c = ', (a + b) * c);
+  console.log((a + b) * c);
 </script>
 
 <script type="x" id="ch0103/03">
   var a = Number(prompt('a = ', ''));
   var b = Number(prompt('b = ', ''));
   var c = Number(prompt('c = ', ''));
-  console.log('(a + b) / c = ', Math.trunc((a + b) / c));
+  console.log(Math.trunc((a + b) / c));
 </script>
 
 <script type="x" id="ch0103/04">
   var a = Number(prompt('被除数为 ', ''));
   var b = Number(prompt('除数为(非0) ', ''));
-  console.log('整数商为 ', Math.trunc(a / b));
-  console.log('余数为 ', Math.trunc(a % b));
+  console.log(Math.trunc(a / b));
+  console.log(Math.trunc(a % b));
 </script>
 
 <script type="x" id="ch0103/05">
   var a = Number(prompt('a = ', ''));
   var b = Number(prompt('b = ', ''));
-  console.log('a / b = ',(a / b).toFixed(9));
+  console.log((a / b).toFixed(9));
 </script>
 
 <script type="x" id="ch0103/06">
   var a = Number(prompt('确诊数为 ', ''));
   var b = Number(prompt('死亡数为', ''));
   var c = b / a * 100;
-  console.log(('死亡率为 '),c.toFixed(3) + '%');
+  console.log((c.toFixed(3) + '%');
 </script>
 
 <script type="x" id="ch0103/07">
@@ -45,28 +45,28 @@
   var c = Number(prompt('c = ',''));
   var d = Number(prompt('d = ',''));
   var e = (a * (x ** 3)) + (b * (x * x)) + (c * x) + d;
-  console.log('f(x) = ',e.toFixed(7));
+  console.log(e.toFixed(7));
 </script>
 
 <script type="x" id="ch0103/08">
   var f = Number(prompt('华氏温度为 ',''));
   var c = 5 * (f - 32) / 9
-  console.log('摄氏温度为 ',c.toFixed(5));
+  console.log(c.toFixed(5));
 </script>
 
 <script type="x" id="ch0103/09">
   var r= Number(prompt('圆的半径为 ',''));
   var pi = 3.14159
-  console.log('圆的直径为 ',(2 * r).toFixed(4));
-  console.log('圆的周长为 ',(2 * pi * r).toFixed(4));
-  console.log('圆的面积为 ',(pi * r * r).toFixed(4));
+  console.log((2 * r).toFixed(4));
+  console.log((2 * pi * r).toFixed(4));
+  console.log((pi * r * r).toFixed(4));
 </script>
 
 <script type="x" id="ch0103/10">
   var r1= Number(prompt('第一个电阻为 ',''));
   var r2 = Number(prompt('第二个电阻为 ',''));
   var a = 1 / ((1 / r1) + (1 / r2));
-  console.log('并联阻抗为 ',a.toFixed(2));
+  console.log(a.toFixed(2));
 </script>
 
 <script type="x" id="ch0103/11">
@@ -74,23 +74,23 @@
   var b = Number(prompt('b = ',''));
   var k = Math.trunc(a / b);
   var x = a - (b * k);
-  console.log('a / b的余数为 ',x);
+  console.log(x.toFixed(10) - 0);
 </script>
 
 <script type="x" id="ch0103/12">
   var r= Number(prompt('球半径为 ',''));
   var pi = 3.14;
   var v = r ** 3 * pi * 4 / 3;
-  console.log('球体积为 ',v.toFixed(2));
+  console.log(v.toFixed(2));
 </script>
 
 <script type="x" id="ch0103/13">
-  var n = Number(prompt('输入一位三位数n ',''));
+  var n = Number(prompt('输入一位三位7数n ',''));
   var a = Math.trunc(n / 100);
   var b = Math.trunc((n - (a * 100)) / 10);
   var c = (n % 10);
   var d = c * 100 + b * 10 + a
-  console.log('反向输出', d);
+  console.log(d);
 </script>
 
 <script type="x" id="ch0103/14">
@@ -98,7 +98,7 @@
   var r = Number(prompt('圆桶半径r = ',''));
   var v = 3.14159 * r * r * h / 1000;
   var x = 20 / v;
-  console.log('至少喝 ', Math.ceil(x),'升水');
+  console.log(Math.ceil(x));
 </script>
 
 <script type="x" id="ch0103/15">
@@ -106,7 +106,7 @@
   var x = Number(prompt('x = ',''));
   var y = Number(prompt('y = ',''));
   var a = Math.ceil(y / x);
-  console.log('剩', n - a,'个苹果');
+  console.log（n - a);
 </script>
 
 <script type="x" id="ch0103/16">
@@ -116,7 +116,7 @@
   var Yb = Number(prompt('Yb = ',''));
   var x = ((Xb - Xa) ** 2) + ((Yb - Ya) ** 2);
   var long = Math.sqrt(x);
-  console.log('AB线长', long.toFixed(3));
+  console.log(long.toFixed(3));
 </script>
 
 <script type="x" id="ch0103/17">
@@ -131,7 +131,7 @@
   var c = Math.sqrt((x1-x3) ** 2 + (y1 - y3) ** 2);
   var p = (a + b + c) / 2;
   var s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-  console.log('面积', s.toFixed(2));
+  console.log(s.toFixed(2));
 </script>
 
 <script type="x" id="ch0103/18">
@@ -139,18 +139,88 @@
   var a2 = Number(prompt('a2 = ',''));
   var n = Number(prompt('n = ',''));
   var an = (a1 + (a2 - a1) * (n - 1));
-  console.log('第n项值为 ',an);
+  console.log(an);
 </script>
 
 <script type="X" id="ch0103/19">
   var A = Number(prompt('A = ',''));
   var B = Number(prompt('B = ',''));
   var n = A * B;
-  console.log('A * B = ',n);
+  console.log(n);
 </script>
 
 <script type="x" id="ch0103/20">
   var n = Number(prompt('n = ',''));
   var a = 2 ** n;
-  console.log('2的n次方为 ',a);
+  console.log(a);
+</script>
+
+<script type="x" id="ch0104/01">
+  var N = Number(prompt('N = ',''));
+  if(N > 0 )
+    console.log('positive');
+  else if(N < 0)
+    console.log('negative');
+  else
+    console.log('zero');
+</script>
+
+<script type="x" id="ch0104/02">
+  var N = Number(prompt('N = ',''));
+  if(N < 0 )
+    console.log((0 - N).toFixed(2));
+  else
+    console.log(N.toFixed(2));
+</script>
+
+<script type="x" id="ch0104/03">
+  var n = Number(prompt('n = ',''));
+  var a = n % 2
+  if(a != 0 )
+    console.log('odd');
+  else
+    console.log('even');
+</script>
+
+<script type="x" id="ch0104/04">
+  var n = prompt('n = ','');
+  var a = Number(n.charCodeAt(0));
+  var b = a % 2
+  if(b != 0 )
+    console.log('YES');
+  else
+    console.log('NO');
+</script>
+
+<script type="x" id="ch0104/05">
+  var x = Number(prompt('x = ',''));
+  var y = Number(prompt('y = ',''));
+  if(x > y)
+    alert('>');
+  else if(x < y)
+    console.log('<');
+  else
+    console.log('=');
+</script>
+
+<script type="x" id="ch0104/06">
+  var x = Number(prompt(''));
+  var a = x / 10;
+  if(a >= 10)
+    console.log('0');
+  else if(a < 1)
+    console.log('0');
+  else
+    console.log('1');
+</script>
+
+<script type="" id="ch0104/07">
+  var x = Number(prompt(''));
+  var a = x / 10;
+  if(a >= 10)
+    console.log('0');
+  else if(a < 1)
+    console.log('0');
+  else
+    console.log('1');
 </script>
