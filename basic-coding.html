@@ -423,6 +423,489 @@
   console.log(b);
 </script>
 
-<script type="" id="ch0105/01">
-  //var =
+<script type="x" id="ch0105/01">
+  var n = Number(prompt('输入学生人数：',''));
+  var a = 0;
+  var total = 0;
+  while(a < n){
+    var age = Number(prompt());
+    var a = a + 1;
+    var total = age + total;
+  }
+  console.log((total / n).toFixed(2));
+</script>
+
+<script type="x" id="ch0105/02">
+  var a = 0;
+  var total = 0;
+  while(a < 12){
+    var money = Number(prompt());
+    var a = a + 1;
+    var total = money + total;
+  }
+  var average = (total / 12).toFixed(2);
+  console.log('$' + average);
+</script>
+
+<script type="x" id="ch0105/03">
+  var n = Number(prompt('样本容量为：',''));
+  var a = 0;
+  var total = 0;
+  while(a < n){
+    var number = Number(prompt());
+    var a = a + 1;
+    var total = number + total;
+  }
+  var average = (total / n).toFixed(4);
+  console.log(average);
+</script>
+
+<script type="x" id="ch0105/04">
+  var n = Number(prompt('有几个整数' + ''));
+  var a = 0;
+  var total = 0;
+  while(a < n){
+    var number = Number(prompt());
+    var a = a + 1;
+    var total = number + total;
+  }
+  var average = (total / n).toFixed(5);
+  console.log(total , average);
+</script>
+
+<script type="x" id="ch0105/05">
+  var n = Number(prompt('考试人数为：',''));
+  var a = 0;
+  var bigest = 0;
+  while(a < n){
+    var number = Number(prompt());
+    var a = a + 1;
+    if(bigest < number){
+      var bigest = number;
+    }
+  }
+  console.log(bigest);
+</script>
+
+<script type="x" id="ch0105/06">
+  var n = Number(prompt('序列个数为：' + ''));
+  var a = 1;
+  var number = Number(prompt());
+  var max = number;
+  var min = number;
+  while(a < n){
+    var num = Number(prompt());
+    a++;
+    if(max < num){
+      max = num;
+    }
+    if(min > num){
+      min = num;
+    }
+  }
+  console.log(max - min);
+</script>
+
+<script type="x" id="ch0105/07">
+  var n = Number(prompt('天数'),'');
+  var day = 0;
+  var a = 0;
+  var b = 0;
+   var c = 0;
+  while(day < n){
+    day++;
+    var gold = Number(prompt('金牌数',''));
+    var silver = Number(prompt('银牌数',''));
+    var copper = Number(prompt('铜牌数',''));
+    var a = a + gold;
+    var b = b + silver;
+    var c = c + copper;
+  }
+    var total = a + b + c;
+    console.log(a , b , c , total);
+</script>
+
+<script type="x" id="ch0105/08">
+  var n = Number(prompt('内角有几个'),'');
+  var a = 0;
+  var totalangle = 0;
+  while(a < (n - 1)){
+    a++;
+    var angle = Number(prompt('角度',''));
+    var totalangle = totalangle + angle;
+  }
+    var total = (n - 2) * 180;
+    var remain = total - totalangle;
+    console.log(remain);
+</script>
+
+<script type="x" id="ch0105/09">
+  var m = Number(prompt());
+  var n = Number(prompt());
+  var a = 0;
+  while(m <= n){
+    if(m % 2 == 1){
+      a = a + m;
+    }
+    m++;
+  }
+  console.log(a);
+</script>
+
+<script type="x" id="ch0105/10">
+  var m = Number(prompt());
+  var n = Number(prompt());
+  var a = 0;
+  while(m <= n){
+    if(m % 17 == 0){
+      a = a + m;
+    }
+    m++;
+  }
+  console.log(a);
+</script>
+
+<script type="x" id="ch0105/11">
+  var k = Number(prompt('给定k个正整数'));
+  var time = 0;
+  var a = 0;
+  var b = 0;
+  var c = 0;
+  while(time < k){
+    var number = Number(prompt(''));
+    if(number == 1){
+      a += 1;
+    }
+    if(number == 5){
+      b += 1;
+    }
+    if(number == 10){
+      c += 1;
+    }
+    time++;
+  }
+  console.log(a);
+  console.log(b);
+  console.log(c);
+</script>
+
+<script type="x" id="ch0105/12">
+  var N = Number(prompt('共计几个数字',''));
+  var m = Number(prompt('指定数字为：'));
+  var a = 0;
+  var count = 0;
+  while(a < N){
+    var number = Number(prompt(''));
+    if(m == number){
+      count += 1;
+    }
+    a++;
+  }
+  console.log(count);
+</script>
+
+<script type="x" id="ch0105/13">
+  var a = Number(prompt());
+  var n = Number(prompt());
+  console.log(a ** n);
+</script>
+
+<script type="x" id="ch0105/14">
+  var x = Number(prompt('人口基数',''));
+  var n = Number(prompt('年数',''));
+  var a = 0;
+  var count = 0;
+  while(a < n){
+   x = x * (1 + 0.001);
+    a++;
+  }
+  console.log(x.toFixed(4));
+</script>
+
+<script type="x" id="ch0105/15">
+  var R = Number(prompt('年利率',''));
+  var M = Number(prompt('总值',''));
+  var Y = Number(prompt('投资年数',''));
+  var a = 0;
+  while(a < Y){
+    M = M * (1 + (R / 100));
+    a++;
+  }
+  var total = Math.trunc(M);
+  console.log(total);
+</script>
+
+<script type="X" id="ch0105/16">
+  var N = Number(prompt('年薪',''));
+  var K = Number(prompt('房价增长百分之',''));
+  var M = 1;
+  var b = 200;//房价
+  var a = N * M;
+  do{
+    M = M + 1;//年份
+    b = b * (1 + (K / 100));//新房价
+    a = N * M;
+    var c = a / b;//存款 ： 房价
+  }while(c < 1);
+  if(M <= 20)
+    console.log(M);
+  else
+    console.log('Impossible');
+</script>
+
+<script type="x" id="ch0105/17">
+  var k = Number(prompt());
+  var a = 1;
+  var b = 1;
+  var c;
+  var count = 0;
+  while(count < (k - 2)){
+    c = a + b;
+    a = b;
+    b = c;
+    count +=1;
+  }
+  console.log(c);
+</script>
+
+<script type="x" id="ch0105/18">
+  var n = Number(prompt());
+  var total = Number(prompt('总病例数',''));
+  var a = Number(prompt('有效病例',''));
+  var x = a / total;
+  var count = 0;
+  while(count < (n - 1)){
+    var newtotal = Number(prompt('总病例数',''));
+    var newa = Number(prompt('有效病例',''));
+    var y = newa / newtotal;
+    count++;
+    var b = x - y;
+    if(b > 0.05)
+      console.log('worse');
+    else if(b < -0.05)
+      console.log('better');
+    else
+      console.log('same');
+  }
+</script>
+
+<script type="x" id="ch0105/19">
+  var n = Number(prompt('屋顶数：',''));
+  var count = 0;
+  var time = 0;
+  while(count < n){
+    var x = Number(prompt('x坐标',''));
+    var y = Number(prompt('y坐标',''));
+    var m = Number(prompt('人数',''));
+    var long = Math.sqrt(x * x + y * y);//屋顶距离
+    time += (long / 50 * 2 + m + m / 2);
+    var t = Math.ceil(time);
+    count++;
+  }
+  console.log(t);
+</script>
+
+<script type="x" id="ch0105/20">
+  var h = Number(prompt('初始高度',''));
+  var count = 1;
+  var long = h;//第一次落地经过的长度
+  var height = h / 2;//第一次弹跳高度
+  while(count < 10){
+    h = h / 2;
+    height = height / 2;
+    long += (h * 2);
+    count += 1;
+  }
+  var a = long.toFixed(4);
+  var b = height.toFixed(7);a
+  console.log(a);
+  console.log(b);
+</script>
+
+<script type="x" id="ch0105/21">
+  var N = Number(prompt());
+  while(N != 1){
+    var a = N % 2;
+    if(a == 1){
+      var x1 = N;//将奇数N原值赋给x1
+      N = N * 3 + 1;
+      console.log(x1 + '*3+1=' + N);
+    }
+    else if(a == 0){
+      var x2 = N;//将偶数N原值付给x2
+      N = N / 2;
+      console.log(x2 + '/2=' + N);
+    }
+  }
+  console.log('End');
+</script>
+
+<script type="x" id="ch0105/22">
+  //debugger
+  var m = 1;
+  var total = 0;//每月剩余
+  var a = 0;
+  var check = false;
+  while(m <= 12){
+    var money = Number(prompt('每月预算',''));
+    if(money <= 300){
+      total += (300 - money);
+    }
+    else{
+      if(total + 300 >= money){
+        total = total + 300 - money;
+      }
+      else{
+        console.log('-' + m);
+        check = true;
+      }
+    }
+    if(total >= 100){
+      var b = Math.trunc(total / 100); //有几百交到储蓄
+      total = total - (b * 100);
+      a += b;
+    }
+    m++;
+  }
+  if(check == false){
+    console.log(a * 100 * 1.2 + total);
+  }
+</script>
+
+<script type="x" id="ch0105/23">
+  //debugger
+  var m = Number(prompt('药品总量',''));;
+  var n = Number(prompt('取药人数',''));
+  var total = m;//剩余药量
+  var no = 0;//取药的人数
+  var a = 1;//第一个人
+  while(a <= n){
+    var take = Number(prompt('此人想取走药量',''));
+    if(take <= total){
+      total = (total - take);
+    }
+    else if(take > total){
+      no += 1;
+    }
+    a++;
+  }
+  console.log(no);
+</script>
+
+<script type="x" id="ch0105/24">
+  //debugger
+  var n = Number(prompt('测量次数',''));
+  var count = 0;
+  var time = 0;
+  var a = false;
+  var b = 0;//记录连续正常的最长小时数
+  while(count < n){
+    var first = Number(prompt('收缩压',''));
+    var second = Number(prompt('舒张压',''));
+    if((first <= 140 && first >= 90) && (second <= 90 && second >= 60)){
+      a = true;
+    }else{
+      a = false;
+    }
+    if(a == true){
+      time += 1;
+      if(b < time){
+        b = time;
+      }
+    }
+    else{
+      time = 0;
+    }
+    count++;
+  }
+  console.log(b);
+</script>
+
+<script type="x" id="ch0105/25">
+  //debugger
+  var num = 0;
+  var check = false;
+  var a1 = 0;
+  var a2 = 0;
+  var a3 = 0;
+  var b1 = 0;
+  var b2 = 0;
+  var b3 = 0;
+  while(check == false){
+    num = Math.round(Math.random() * 729);
+    var a = (num).toString(7);//a为随机数的7进制数
+    var b = (num).toString(9);//b为随机数的9进制数
+    a1 = Math.trunc(a / 100);//a1 为7进制数的第一位
+    a2 = Math.trunc(a / 10) - (10 * a1);//a2 为第二位
+    a3 = a - 100 * a1 - a2 * 10; //a3为第三位
+    b1 = Math.trunc(b / 100);//b1 为9进制数的第一位
+    b2 = Math.trunc(b / 10) - (10 * b1);//b2 为第二位
+    b3 = b - 100 * b1 - b2 * 10; //b3 为第三位
+    if((a1 == b3) && (a2 == b2) && (a3 == b1)){
+      check = true;
+    }
+    if(a1 == 0){
+      check = false;
+    }
+  }
+  console.log(num);
+  console.log(a);
+  console.log(b);
+</script>
+
+<script type="x" id="ch0105/26">
+  var n = Number(prompt('输入几个四位数',''));
+  var count = 0;
+  var result = 0;
+  var a1 , a2 , a3 , a4;//千 百 十 个
+  while(count < n){
+    var number = Number(prompt());
+    a1 = Math.trunc(number / 1000);
+    a2 = Math.trunc(number / 100) - a1 * 10;
+    a3 = Math.trunc(number / 10) - a1 *100 - a2 * 10;
+    a4 = number - 1000 * a1 - 100 * a2 - 10 * a3;
+    var a = a4 - a3 - a2 - a1;
+    if(a > 0){
+      result++;
+    }
+    count++;
+  }
+  console.log(result);
+</script>
+
+<script type="x" id="ch0105/27">
+  //debugger
+  var K = Number(prompt());
+  var n = 1;
+  var sn = 0;
+  var check = false;
+  while(check == false){
+    sn += (1 / n);
+    if(sn > K){
+      check = true;
+      break;
+    }
+    n++;
+  }
+  console.log(n);
+</script>
+
+<script type="" id="ch0105/28">
+  debugger
+  var number = Number(prompt());
+  var check = false;
+  var a = (number).toString();
+  var b = a.join(str);
+  var c = b.reverse();
+  /*var a = number.toString().length;//获取number的字符长度
+  var n = String(number).split('');//n[0]表示第一位字符大小
+  var count = 0;
+  var num = a;//表示输入数字第num位
+  let b;
+  while(count < a){
+    b = n[num - 1];
+    count++;
+    num--;
+    console.log(b);
+  }*/
 </script>

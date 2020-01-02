@@ -1,9 +1,15 @@
 <script>
-  var x = Number(prompt())
-  if (x < 0)
-    console.log('无解');
-  else if (x > 0)
-    console.log(Math.sqrt(x));
-  else
-    console.log(Math.sqrt(x));
+  var num = Math.round(Math.random() * 100);
+  var result = false;
+  while (result == false) {
+    var input = Number(prompt('请输入数字0-100：', ''));
+    if (input > num)
+      alert('太大了');
+    else if (input < num)
+      alert('太小了');
+    else if (input == num) {
+      result = true;
+      alert('猜对了');
+    }
+  }
 </script>
