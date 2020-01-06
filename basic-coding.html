@@ -440,8 +440,8 @@
   var total = 0;
   while(a < 12){
     var money = Number(prompt());
-    var a = a + 1;
-    var total = money + total;
+    a = a + 1;
+    total = money + total;
   }
   var average = (total / 12).toFixed(2);
   console.log('$' + average);
@@ -733,7 +733,7 @@
     }
     else if(a == 0){
       var x2 = N;//将偶数N原值付给x2
-      N = N / 2;
+      N = N / 2; //N = N >> 1 一个意思
       console.log(x2 + '/2=' + N);
     }
   }
@@ -890,22 +890,403 @@
   console.log(n);
 </script>
 
-<script type="" id="ch0105/28">
-  debugger
+<script type="x" id="ch0105/28">
+  //debugger
   var number = Number(prompt());
   var check = false;
-  var a = (number).toString();
-  var b = a.join(str);
-  var c = b.reverse();
-  /*var a = number.toString().length;//获取number的字符长度
+  var c = '';
+  var a = number.toString().length;//获取number的字符长度
   var n = String(number).split('');//n[0]表示第一位字符大小
-  var count = 0;
   var num = a;//表示输入数字第num位
-  let b;
-  while(count < a){
-    b = n[num - 1];
-    count++;
+  var b;
+  for(var count = 0 ; count < a ; count++){
+    b = (n[num - 1]);
+    c += b + ' ';
     num--;
-    console.log(b);
-  }*/
+    //console.log(b);
+  }
+  console.log(c);
+
+</script>
+
+<script type="x" id="ch0105/29">
+//debugger
+  var N = +prompt();
+  var result = 0;
+  do{
+    var a =  N % 10;//获得整数的最后一位数
+    N = (N - a) / 10;//去掉最后一位
+    result = result * 10 + a;
+    }while(N != 0)
+  console.log(result);
+</script>
+
+<script type="x" id="ch0105/30">
+  var m = +prompt();//输入整数m
+  var k = +prompt();//有k个3
+  var check = false;
+  var count = 0;//计数3
+  if(m % 19 == 0){
+    do{
+      var a = m % 10;//获得m的最后一位数字
+      m = (m - a) / 10;//去除最后一位
+      if(a == 3){
+        count++;//整数中每有一个3，计数加1
+      }
+    }while(m != 0)
+    if(count == k){
+      console.log('YES');
+    }
+    else{
+      console.log('NO');
+    }
+  }
+  else{
+    console.log('NO');
+  }
+
+</script>
+
+<script type="x" id="ch0105/31">
+  var N = +prompt();//共有N盏灯
+  var M = +prompt();//有M个人
+  var temp = '1';
+  for(var i = 2; i <= N; i++){//从第一盏到最后一盏循环
+    var a = true;
+    for(var j = 1; j <= M; j++){
+      if(i % j == 0){
+        a = !a;
+      }
+    }
+    if(a == false){
+        temp += ',' + i;
+      }
+  }
+  console.log(temp);
+</script>
+
+<script type="x" id="ch0105/32">
+//debugger
+  var n = +prompt();//数列有几项
+  var q = 2;
+  var p = 1;
+  var x,y;
+  var total = 0;
+  for(var i = 1; i <= n; i++){
+    total += q / p;
+    q = q + p;
+    p = q - p;
+  }
+  console.log(total.toFixed(4));
+</script>
+
+<script type="x" id="ch0105/33">
+//debugger
+  var n = +prompt();
+  var total = 0;
+  for(var i = 1; i <= n; i++){
+    if(i % 2 == 0){
+      total -= (1 / i);
+    }
+    else{
+      total += (1 / i);
+    }
+  }
+  console.log(total.toFixed(4));
+</script>
+
+<script type="x" id="ch0105/34">
+  var n = +prompt();
+  var total = 0;
+  var a = 1;
+  for(var i = 1; i <= n; i++){
+    a = a * i;
+    total += a;
+  }
+  console.log(total);
+</script>
+
+<script type="x" id="ch0105/35">
+  var n = +prompt();
+  var total = 1;
+  var a = 1;
+  for(var i = 1; i <= n; i++){
+    a = (a * i);
+    total += (1 / a);
+  }
+  console.log(total.toFixed(10));
+</script>
+
+<script type="x" id="ch0105/36">
+  var x = +prompt();
+  var n = +prompt();
+  var total = 1;
+  var a;
+  for(var i = 1; i <= n; i++){
+    a = x ** i;
+    total += a;
+  }
+  console.log(total.toFixed(2));
+</script>
+
+<script type="x" id="ch0105/37">
+  var M = +prompt();//体力最大值
+  var N = +prompt();//战斗力
+  var X = +prompt();//能量元素
+  X = X - Math.ceil(M / N);//初始剩多少能量元素
+  var a;
+  while(N <= M){
+    a = Math.floor(M / N);
+    N = N + a;
+    X = X - Math.ceil(M / N);
+  }
+  console.log(N);
+</script>
+
+<script type="x" id="ch0105/38">
+//debugger
+  var count = +prompt();//共有几组数
+  var n;
+  for(var i = 1; i <= count; i++){
+    n = +prompt();//最高次幂为n
+    var temp = '';
+    var a;
+    var b = n;
+    for(var j = 0; j <= n; j++){
+      var num = +prompt();
+      a = num * b;
+      if(b != 0){
+        temp += a + " ";
+      }
+      b--;
+    }
+    if(n == 0){
+      console.log(0);
+    }
+    else{
+      console.log(temp);
+    }
+  }
+</script>
+
+<script type="x" id="ch0105/39">
+//debugger
+  var n = +prompt();//输入一个小于100的数
+  var total = 0;//所有与7无关的数平方和
+  //var check = false;
+  var b,a;
+  for(var i = 1; i <= n; i++){
+  //判断是否含有数字某一位是否为7
+    var check = false;
+    var a = i % 7;
+    if(a == 0){
+      check = false;
+    }
+    else{
+      b = i;
+      do{
+        a = b % 10;//获得i的最后一位数字
+        b = (b - a) / 10;//去除最后一位
+        if(a == 7){
+          b = 0;
+        }
+        else{
+          check = true;
+        }
+      }while(b != 0)
+    }
+    if(check == true){
+      var c = i ** 2;
+      total += c;
+    }
+  }
+  console.log(total);
+</script>
+
+<script type="x" id="ch0105/40">
+  var n = +prompt();
+  var count = 0;
+  for(var i = 1; i <= n; i++){
+    var a = i;
+    do{
+      var b = a % 10;
+      a = (a - b) / 10;
+      if(b == 1){
+        count++;
+      }
+    }while(a != 0)
+  }
+  console.log(count);
+</script>
+
+<script type="x" id="ch0105/41">
+  var l = +prompt();//mix
+  var r = +prompt();//max
+  var count = 0;
+  while(l <= r){
+    var a = l;
+    do{
+      var b = a % 10;
+      a = (a - b) / 10;
+      if(b == 2){
+        count++;
+      }
+    }while(a != 0)
+    l++;
+  }
+  console.log(count);
+
+</script>
+
+<script type="x" id="ch0105/42">
+//debugger
+  var height = +prompt();
+  var weight = +prompt();
+  var a = prompt();//符号
+  var b = +prompt();
+  var result;
+  var temp = '';
+  //空心
+  if(b == 0){
+    for(var i = 1; i <= height; i++){
+      if(i == 1 || i == height){//第一和最后一行
+        for(var j = 1; j <= weight; j++){
+          temp += a;
+        }
+      }
+      else{
+        for(var j = 1; j <= weight; j++){
+          if(j == 1 || j == height){//第一和最后一列
+            temp += a;
+          }
+          else{
+            temp += ' ';
+          }
+        }
+      }
+      temp += '\n';
+    }
+  }//实心
+  else if(b == 1){
+    for(var i = 1; i <= height; i++){
+      for(var j = 1; j <= weight; j++){
+        temp += a;
+      }
+      temp += "\n";//console.log(temp);
+    }
+  }
+  console.log(temp);
+
+</script>
+
+<script type="x" id="ch0105/43">
+  var p = Number(prompt());
+  var check = true;
+  var c = 0;
+  for(var i = 2; i <= p; i++){
+    if(i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0){
+      check = false;
+    }
+    else{
+      var a = i;
+      var b = p / a;
+      if(b - Math.trunc(b) == 0){
+        if(b % 2 == 0 || b % 3 == 0 || b % 5 == 0 || b % 7 == 0){
+          break;
+        }
+        else{
+          if(c < b){
+            c = b;
+          }
+        }
+      }
+    }
+  }
+  console.log(c);
+
+</script>
+
+<script type="x" id="ch0105/44">
+//debugger
+  var n = +prompt();
+  var count = 4;
+  var a = 0;
+  var check = true;
+  for(var x = 2; ; x++){
+    if(x % 2 == 0 || x % 3 == 0 || x % 5 == 0 || x % 7 == 0){
+      check = false;
+    }
+    else{
+      count++;
+      //console.log(x);
+    }
+    if(a < x){
+      a = x;
+    }
+    if(n == 1){
+      console.log(2);
+      break;
+    }
+    if(n == 2){
+      console.log(3);
+      break;
+    }
+    if(n == 3){
+      console.log(5);
+      break;
+    }
+    if(n == 4){
+      console.log(7);
+      break;
+    }
+    if(count == n){
+      console.log(a);
+      break;
+    }
+  }
+  /*
+  var n = +prompt();
+  var isprime;
+  var count = 0;
+  for(var x = 2 ; ; x++){
+    isprime = true;
+    for(var j = 2 ; j <= x / 2; j++){
+      if(x % j == 0){
+        isprime = false;
+        break;
+      }
+      if(isprime){
+        count++;
+        if(count == n){
+          console.log(x);
+          break;
+        }
+      }
+    }
+  }
+  */
+</script>
+
+<script type="x" id="ch0105/45">
+  //debugger
+  var n = +prompt();//天数
+  var num = 1;//每日工资
+  var salary = 0; //工资总数
+  var count = 0;//次数
+  for(var i = 1; i <= n; i++){
+    salary += num;
+    if(i - count == num){//每num天增加1
+      num++;//日薪+1
+      count = i;
+    }
+  }
+  console.log(salary);
+</script>
+
+<script type="x" id="2.20.1">
+  var a = '';
+  for(var i = 0; i < 7;i++){
+    a += '#';
+    console.log(a);
+  }
 </script>
