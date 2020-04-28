@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  function line(x1, y1, x2, y2) {
+    ctx.strokeStyle = 'black'
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+  }
+
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  for (var x = 0; x < 400; x++) {
+    dot(x, 10, 'black');
+  }
+  for (var x = 0; x < 400; x += 2) {
+    dot(x, 20, 'black');
+  }
+  for (var x = 0; x < 400; x += 4) {
+    dot(x, 30, 'black');
+    dot(x + 1, 30, 'black');
+  }
+  for (var x = 0; x < 400; x += 5) {
+    dot(x, 40, 'black');
+    dot(x + 1, 40, 'black');
+    dot(x + 2, 40, 'black');
+  }
+  for (var y = 0; y < 300; y++) {
+    dot(y, y, 'blue');
+  }
+  for (var a = 0; a < 300; a++) {
+    dot(a / 300 * 400, a, 'red');
+  }
+  for (var x = 100; x < 200; x++) {
+    dot(x, 100, 'black');
+    dot(x, 150, 'black');
+  }
+  for (var y = 100; y <= 150; y++) {
+    dot(100, y, 'black');
+    dot(200, y, 'black');
+  }
+  for (var x = 0; x < 256; x++) {
+    for (var y = 0; y <= 256; y++) {
+      dot(x / 5, y / 5, 'rgb(' + x + ',255,' + y + ')');
+    }
+  }
+  for (var x = -100; x <= 100; x++) {
+    var y = Math.sqrt(10000 - x * x);
+    dot(x + 100, y + 100);
+    dot(x + 100, 100 - y);
+    //line(x + 100, y + 100, x + 100, -y + 100);
+  }
+  for (var y = -100; y <= 100; y++) {
+    var x = Math.sqrt(10000 - y * y);
+    dot(x + 100, y + 100);
+    dot(-x + 100, 100 + y);
+  }
+  for (var x = -50; x <= 50; x++) {
+    var y = Math.sqrt(2500 - x * x);
+    dot(x + 100, y + 100);
+    dot(x + 100, 100 - y);
+    line(x + 100, y + 100, x + 100, -y + 100, 'black');
+  }
+  for (var x = 0; x < 400; x++) {
+    var y = 100 * Math.sin(x * Math.PI / 100) / Math.PI;
+    dot(x, y + 200, 'red');
+  }
+</script>
+
+</html>

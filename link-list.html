@@ -1,0 +1,31 @@
+<script type=''>
+  function arraylist(ary) {
+    if(ary.length == 0){
+      return null
+    }
+    var tmp = []
+    for(var i = 0; i < ary.length; i++){
+      var node = {
+        val: ary[i],
+        next: null,
+      }
+      tmp.push(node)
+    }
+    for(var i = 0; i< ary.length - 1; i++){
+      tmp[i].next = tmp[i + 1]
+    }
+    return tmp[0]
+  }
+
+  function arraytolist2(ary){
+
+  }
+</script>
+
+<script>
+  function qSort(ary) {
+    var pivotIdx = Math.floor(ary.length * Math.random());
+
+  }
+
+</script>

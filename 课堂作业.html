@@ -1,24 +1,150 @@
-<script type="x">
-  var num = Math.round(Math.random() * 100);
-  var result = false;
-  while (result == false) {
-    var input = Number(prompt('请输入数字0-100：', ''));
-    if (input > num)
-      alert('太大了');
-    else if (input < num)
-      alert('太小了');
-    else if (input == num) {
-      result = true;
-      alert('猜对了');
+<script>
+  function a(x) {
+
+  }
+</script>
+
+<script type='x'>
+  function slice(ary , startIdx , endIdx) {
+    if(endIdx === undefined){
+      return ary;
     }
+    if(startIdx === undefined){
+      startIdx = 0;
+    }
+    var stack = [];
+    for(var i = startIdx; i < endIdx ; i++){
+        stack.push(ary[i])
+    }
+    return stack;
+  }
+</script>
+
+<script type="x">//happy number
+  var isHappy = function(n) {
+    for(var count = 0;count < 8;count++){
+        var total = 0;
+        do{
+            var a = n % 10;
+            n = (n - a) / 10;
+            total += a * a;
+        }while(n != 0);
+        n = total;
+        if(total == 1){
+            return true;
+            break;
+        }
+    }
+    if(count==8){
+        return false;
+    }
+  };
+</script>
+
+<script type='x'>//输入年份与月份，输出这此年此月的第一天为星期几
+  function isLeapYear(year) {
+    if (year % 400 == 0) {
+      return true
+    }
+    if (year % 100 == 0) {
+      return false
+    }
+    if (year % 4 == 0) {
+      return true
+    }
+    return false
+  }
+
+  function weekday(year, month) {
+    var sum = 0
+    var y = year - 1
+
+    sum = y * 365 + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
+
+    for (var m = 1; m < month; m++) {
+      sum += getDayOfMonth(m, year)
+    }
+
+    return (sum + 1) % 7
+  }
+
+  function getDayOfMonth(m, y) {
+    if (m == 2) {
+      if (isLeapYear(y)) {
+        return 29
+      } else {
+        return 28
+      }
+    } else {
+      switch (m) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12: return 31
+      }
+      return 30
+    }
+  }
+
+  console.log(weekday(2019, 12))
+  console.log(weekday(2017, 12))
+  console.log(weekday(2015, 1))
+  console.log(weekday(1, 1))
+  console.log(weekday(1985, 4))
+  console.log(weekday(2019, 5))
+  console.log(weekday(2019, 1))
+</script>
+
+<script type='x'>
+  function findIndex(ary, target) {
+    var c = ary.length;
+    for (var i = 0; i < c; i++) {
+      var num = ary[i];
+      if (num == targrt) {
+        return i;
+      }
+    }
+    return -1;
+  }
+</script>
+
+<script type='x'>
+  function find(step, howdidigethere) {
+    if (step == 20){
+      console.log(howdidigethere)
+    }else if(step > 20){
+      return
+    }else{
+      find(step + 1, howdidigethere + '1')
+      find(step + 2, howdidigethere + '2')
+    }
+  }
+  find(0, '')
+</script>
+
+<script type='x'>
+  function find(x , y , howdidigethere){
+    if( x == 3 && y == 6){
+      console.log(howdidigethere)
+    }else if(x > 3 || y > 6){
+      return
+    }else{
+      find(x + 1, y, howdidigethere + '>')
+      find(x, y + 1, howdidigethere + 'v')
+    }
+  }
+  find(0 , 0 , '')
+</script>
+
+<script type=''>
+  function name(params) {
+
   }
 </script>
 
 <script>
-  var digitwidth = function (n) {
-    do {
-      var digit = n % 10;
-      n = (n)
-    }
-  }
+
 </script>

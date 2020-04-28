@@ -1,3 +1,227 @@
+<script>
+  /*
+  7: 输入一个数，输出其是否是7的倍数或各个位上是否有7（25：NO，27：YES，21：YES)
+  sort: 输入3个数，按从小到大顺序输出
+  narcissistic: 输入一个数判断其是否为水仙花数，输出"YES"/"NO"
+  narcissistics: 输出1000以内的水仙花数
+  palindrom: 输入一个数，判断其是否为一个一个回文数"YES"/"NO"
+  weekday: 输入年份与月份，输出这此年此月的第一天为星期几（0对应周日，1对应周一）
+  complete-number: 输入一个数判断其是否为完数，输出"YES"/"NO"
+  complete-numbers: 输出1000以内的完数
+  prime: 输入一个数判断其是否为素数数，输出"YES"/"NO"
+  primes: 输出100以内的素数
+  itob: 输入一个数，输出其字符串形式
+  lcf&lcm: 输入两个数，分别输出它们的最大公约数和最小公倍数
+  sqrt: 输入一个数，输出其平方根，精确到小数点后3位
+  */
+</script>
+<script type="x" id="7">
+  var n = +prompt();
+  if(n % 7 == 0){
+    console.log('YES');
+  }else{
+    var m = false
+    var a = n % 10;
+    if(a == 7){
+      console.log('YES');
+    }else{
+      console.log('NO');
+    }
+  }
+</script>
+
+<script type="x" id="sort">
+  var a = +prompt();
+  var b = +prompt();
+  var c = +prompt();
+  var result = '';
+  if(a < b){
+    if(b < c){
+      result = ''+ a + b + c;
+    }else{
+      if(a < c){
+        result = ''+ a + c + b;
+      }else{
+        result = ''+ c + a + b;
+      }
+    }
+  }else{
+    if(a < c){
+      result = ''+ b + a + c;
+    }else{
+      if(b < c){
+        result = ''+ b + c + a;
+      }else{
+        result = ''+ c + b + a;
+      }
+    }
+  }
+  console.log(result);
+</script>
+
+<script type="x" id="narcissistic">
+  //debugger
+  var n = +prompt();
+  var width = (n).toString().length;//数字的位数
+  var total = 0;
+  var num = n;
+  do{
+    var a = num % 10;
+    num = (num - a) / 10;
+    total += a ** width;
+  }while(num != 0)
+  if(total == n){
+    console.log('YES');
+  }else{
+    console.log('NO');
+  }
+</script>
+
+<script type="x" id="narcissistics">
+  //debugger
+  var result = "";
+  for(var n = 0; n <= 1000; n++){
+    var width = (n).toString().length;//数字的位数
+    var total = 0;
+    var num = n;
+    do{
+      var a = num % 10;
+      num = (num - a) / 10;
+      total += a ** width;
+    }while(num != 0)
+    if(total == n){
+      result += n + '\n';
+    }
+  }
+  console.log(result);
+</script>
+
+<script type="X" id="palindrom">
+  var n = +prompt();
+  var width = (n).toString().length;
+  if(width == 1){
+    console.log('YES');
+  }else{
+    var num = n;
+    var count = 0;
+    var total = '';
+    do{
+      count++;
+      var a = num % 10;
+      num = (num - a) / 10;
+      total += a;
+    }while(count < width)
+    if(total == n){
+      console.log('YES');
+    }else{
+      console.log('NO');
+    }
+  }
+</script>
+<script type="x" id="weekday">
+  debugger
+  //判断是否为闰年
+  function year(y){
+    if(y % 400 == 0){
+      return true;
+    }
+    if(y % 100 == 0){
+      return false;
+    }
+    if(y % 4 == 0){
+      return true;
+    }
+  }
+  function weekday(y,m){
+    var a = y - 1;
+    var sum = 0;
+    sum = a * 365 + Math.floor(a / 4) - Math.floor(a / 100) + Math.floor(a / 400);
+    for(var b = 1; b < m; b++){
+      sum += day0fm(b,y);
+    }
+  }
+  function dayofm(b,a){
+    if(m == 2){
+      if(year(a)){
+        return 29;
+      }else{
+        return 28;
+      }
+    }else{
+      switch(b){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:return 31;
+      }
+      return 30;
+    }
+  }
+
+   console.log(weekday(2019, 1));
+</script>
+<script type="" id="complete-number">
+
+</script>
+<script type="" id="complete-numbers">
+
+</script>
+<script type="" id="cprime">
+
+</script>
+<script type="" id="primes">
+
+</script>
+<script type="" id="itob">
+
+</script>
+<script type="x" id="lcf&lcm">
+  //debugger
+  var m = +prompt();
+  var n = +prompt();
+  var a = m;
+  var b = n;
+  while(m != n){
+    if(m < n){
+      var t = m;
+      m = n;
+      n = t;
+    }//是两个数始终m > n
+    m = m - n;
+  }
+  console.log(n);
+  var i = 1;
+  while(a != b){
+    if(a < b){
+      var t = a;
+      a = b;
+      b = t;
+    }//a > b
+    do{
+      var num = a * i;
+      var k = num / b;
+      var cha = k - Math.trunc(num / b);
+      i++;
+    }while(cha != 0)
+    a = num;
+    b = a;
+  }
+  console.log(a);
+</script>
+<script type="x" id="sqrt">
+  //var n = +prompt;
+  function sqrt(n) {
+    var r = n;
+    for(var i = 0; i < 100; i++){
+      r = (r * r + n) / 2 / r;
+    }
+    return r;
+  };
+  sqrt(16);
+</script>
 <script type="x" id="ch0103/01">
   var a = Number(prompt('A = ', ''));
   var b = Number(prompt('B = ', ''));
