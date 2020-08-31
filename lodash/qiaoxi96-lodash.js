@@ -276,7 +276,41 @@ var qiaoxi96 = {
     }
     return result
   },
-  //
+  //返回collection的长度，如果集合是类数组或字符串，返回其 length ；如果集合是对象，返回其可枚举属性的个数
+  size: function (collection) {
+    if (collection instanceof Array || collection instanceof String) {
+      return collection.length;
+    } else
+      return Object.keys(collection).length //Object.keys(obj) 返回obj的可枚举属性
+    //Object.getOwnPropertyNames(obj) 返回所有属性（包括不可枚举）
+  },
+  //根据 precision向下舍入number。（注：precision可以理解为保留几位小数。）
+  //number: 要向下舍入的值。
+  //precision: 向下舍入的精度。
+  floor: function (number, precision) {
+    if (precision === 0) {
+      return Math.floor(number);
+    } else {
+      let num = Math.pow(10, precision);
+      return (Math.floor(number * num) / num);
+    }
+  },
+  //计算array的最大值，若为空或假返回undefined
+  max: function (array) {
+    if (Array.isArray(array) && array.length != 0) {
+      return Math.max.apply(null, array)
+    } else {
+      return undefined
+    }
+  },
+  //计算array的最小值，若为空或假返回undefined
+  min: function (array) {
+    if (Array.isArray(array) && array.length != 0) {
+      return Math.min.apply(null, array)
+    } else {
+      return undefined
+    }
+  },
 
 
 

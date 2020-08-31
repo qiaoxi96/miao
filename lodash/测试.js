@@ -1,18 +1,9 @@
-var a = function (...array) {
-  let result = [];
-  let max = 0
-  for (let index in array) {
-    if (array[index].length > max)
-      max = array[index].length
+let func = function (array) {
+  if (Array.isArray(array) && array.length != 0) {
+    return Math.min.apply(null, array)
+  } else {
+    return undefined
   }
-  for (let i = 0; i < max; i++) {
-    let arr = []
-    for (let j = 0; j < array.length; j++) {
-      arr.push(array[j][i])
-    }
-    result.push(arr)
-  }
-  return result
 }
-var array = [[0, 12], [2, 2], [2, 5]]
-console.log(a([0, 12], [2, 10, 2], [2, 5]))
+console.log(func([10, 2, 1, 0, -100]))
+
