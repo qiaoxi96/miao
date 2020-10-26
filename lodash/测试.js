@@ -1,9 +1,10 @@
-let func = function (array) {
-  if (Array.isArray(array) && array.length != 0) {
-    return Math.min.apply(null, array)
-  } else {
-    return undefined
+var func = function (props = [], values = []) {
+  let result = {}
+  for (let i = 0; i < props.length; i++) {
+    result[props[i]] = values[i]
   }
+  return result;
 }
-console.log(func([10, 2, 1, 0, -100]))
+
+console.log(func(['c', 'b'], [2, 1, 3]))
 

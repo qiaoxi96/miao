@@ -10,11 +10,28 @@ var qiaoxi96 = {
     return arry2
   },
   //返回原数组的所有非假数组
-  compack: function (array) {
+  compact: function (array) {
     var arr = []
     for (var i = 0; i < array.length; i++) {
       if (array[i]) {
         arr.push(array[i])
+      }
+    }
+    return arr
+  },
+  //创建一个新数组，将array与任何数组 或 值连接在一起
+  concat: function (array, ...values) {
+    let arr = [];
+    for (let i in array) {
+      arr.push(array[i]);
+    }
+    for (let j in values) {
+      if (Array.isArray(values[j])) {
+        for (let a in values[j]) {
+          arr.push(values[j][a])
+        }
+      } else {
+        arr.push(values[j])
       }
     }
     return arr
@@ -32,7 +49,7 @@ var qiaoxi96 = {
     //对array数组进行filter()方法，由于filter通过测试保留，false不保留，筛选出不在arr数组中出现的元素集
   },
   //从数组中去除n个元素返回的数组
-  drop: function (array, n) {
+  drop: function (array, n = 1) {
     for (var i = 0; i < n; i++) {
       array.shift()
     }
@@ -74,7 +91,7 @@ var qiaoxi96 = {
     value (*): 需要查找的值。
     [fromIndex=0] (number): 开始查询的位置。
   */
-  indexOf: function (array, value, fromIndex) {
+  indexOf: function (array, value, fromIndex = 0) {
     let count = 0
     for (var i = fromIndex; i < array.length; i++) {
       if (array[i] === value) {
@@ -90,6 +107,21 @@ var qiaoxi96 = {
   //获取数组最后一个元素之外的所有元素
   initial: function (array) {
     return array.slice(0, array.length - 1)
+  },
+  //创建唯一值的数组，这个数组包含所有给定数组都包含的元素
+  intersection: function (...arrays) {
+    let result = [];
+    for (let i in arrays[0]) {
+      result.push(arrays[0][i])
+    }
+    for (let j = 1; j < arrays.length; j++) {
+      for (let a in result) {
+        if (arrays[j].indexOf(result[a]) == -1) {
+          result.splice(a, 1)
+        }
+      }
+    }
+    return result
   },
   //将数组转换为由separator相连的字符串
   join: function (array, separator) {
@@ -176,7 +208,7 @@ var qiaoxi96 = {
       // array[right] = item
       // left++
       // right--
-      [arr[left++], arr[right--]] = [arr[right--], arr[left++]];
+      [array[left++], array[right--]] = [array[right--], array[left++]];
     }
     return array
   },
@@ -229,7 +261,7 @@ var qiaoxi96 = {
   take: function (array, n = 1) {
     return array.slice(0, n);
   },
-  //从又开始提取array的n个元素
+  //从右开始提取array的n个元素
   takeRight: function (array, n = 1) {
     // return array.slice(array.length - n, n + 1)
     if (n == 0) {
@@ -250,6 +282,23 @@ var qiaoxi96 = {
     })
     //return [...new Set(array)]
   },
+  //类似于_.zip，除了它接收分组元素的数组，并且创建一个数组，分组元素到打包前的结构
+  unzip: function (array) {
+    let result = []
+    let max = 0;
+    for (let index in array) {
+      if (array[index].length > max)
+        max = array[index].length
+    }
+    for (let i = 0; i < max; i++) {
+      let arr = [];
+      for (let j = 0; j < array.length; j++) {
+        arr.push(array[j][i])
+      }
+      result.push(arr)
+    }
+    return result
+  },
   //返回一个去除values值的新数组
   without: function (array, ...values) {
     return array.filter((item) => {
@@ -258,6 +307,25 @@ var qiaoxi96 = {
       return values.indexOf(item) === -1//用indexOf方法判断数组中是否含有item，没有返回-1
       */
     })
+  },
+  //返回一个给定数组唯一值的数组
+  xor: function (...arrays) {
+    let result = [];
+    for (let i in arrays[0]) {
+      result.push(arrays[0][i])
+    }
+    debugger;
+    for (let j = 1; j < arrays.length; j++) {
+      for (let a = 0; a < arrays[j].length; a++) {
+        if (result.indexOf(arrays[j][a]) === -1) {
+          result.push(arrays[j][a])
+        } else {
+          let num = result.indexOf(arrays[j][a])
+          result.splice(num, 1)
+        }
+      }
+    }
+    return result;
   },
   //创建一个数组，将所有传入的数组的第一项作为第一个元素，所有第二项作为第二个元素。。。
   zip: function (...array) {
@@ -276,6 +344,38 @@ var qiaoxi96 = {
     }
     return result
   },
+  //接受2个数组，第一个数组中的值作为属性标识符（属性名，第二个数组中的值作为相应的属性值
+  zipObject: function (props = [], values = []) {
+    let result = {}
+    for (let i = 0; i < props.length; i++) {
+      result[props[i]] = values[i]
+    }
+    return result;
+  },
+  //检查 value(值) 是否在 collection(集合) 中
+  // collection(Array|Object|string): 要检索的集合。
+  // value(*): 要检索的值。
+  // [fromIndex = 0](number): 要检索的 索引位置。
+  includes: function (col, val, fromIndex = 0) {
+    if (Array.isArray(col)) {
+      if (fromIndex >= 0) {
+        for (let i = fromIndex; i < col.length; i++) {
+          if (col[i] === val)
+            return true;
+        }
+      } else {
+        for (let i = fromIndex; i < col.length; i++) {
+          if (col[i] === val)
+            return true;
+        }
+      }
+
+      if (i === col.length)
+        return false;
+    } else if (typeof col === Object) {
+
+    }
+  },
   //返回collection的长度，如果集合是类数组或字符串，返回其 length ；如果集合是对象，返回其可枚举属性的个数
   size: function (collection) {
     if (collection instanceof Array || collection instanceof String) {
@@ -288,8 +388,8 @@ var qiaoxi96 = {
   //number: 要向下舍入的值。
   //precision: 向下舍入的精度。
   floor: function (number, precision) {
-    if (precision === 0) {
-      return Math.floor(number);
+    if (!precision || precision === 0) {
+      return Math.floor(number)
     } else {
       let num = Math.pow(10, precision);
       return (Math.floor(number * num) / num);
@@ -298,7 +398,7 @@ var qiaoxi96 = {
   //计算array的最大值，若为空或假返回undefined
   max: function (array) {
     if (Array.isArray(array) && array.length != 0) {
-      return Math.max.apply(null, array)
+      return array.reduce((prev, cur) => prev > cur ? prev : cur)
     } else {
       return undefined
     }
@@ -306,12 +406,54 @@ var qiaoxi96 = {
   //计算array的最小值，若为空或假返回undefined
   min: function (array) {
     if (Array.isArray(array) && array.length != 0) {
-      return Math.min.apply(null, array)
+      return array.reduce((prev, cur) => prev < cur ? prev : cur)
     } else {
       return undefined
     }
   },
-
+  //计算array 的平均值
+  mean: function (array) {
+    if (Array.isArray(array) && array.length != 0) {
+      return (array.reduce((prev, cur) => prev += cur)) / array.length
+    } else {
+      return NaN
+    }
+  },
+  //两个数相乘
+  multiply: function (augend, addend) {
+    if (!augend && augend !== false) {
+      return 1
+    }
+    if (!addend) {
+      return augend
+    } else {
+      return augend * addend
+    }
+  },
+  //根据 precision（精度） 四舍五入 number
+  round: function (number, precision) {
+    if (!precision || precision === 0) {
+      return Math.round(number)
+    } else {
+      let num = Math.pow(10, precision);
+      return (Math.round(number * num) / num);
+    }
+  },
+  //两数相减
+  subtract: function (minuend, subtrahend) {
+    if (!subtrahend && minuend !== false) {
+      return 0
+    }
+    if (!subtrahend) {
+      return minuend
+    } else {
+      return minuend - subtrahend
+    }
+  },
+  //计算 array 中值的总和
+  sum: function (array) {
+    return array.reduce((prev, cur) => prev += cur)
+  },
 
 
 
